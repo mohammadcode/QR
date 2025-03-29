@@ -1,0 +1,230 @@
+:root {
+      --primary-color: #4361ee;
+      --primary-dark: #3a56d4;
+      --secondary-color: #3f37c9;
+      --text-color: #2b2d42;
+      --light-text: #8d99ae;
+      --bg-color: #f8f9fa;
+      --card-color: #ffffff;
+      --error-color: #ef233c;
+      --success-color: #2ec4b6;
+      --border-radius: 12px;
+      --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'IRANSansXFaNum' !important;
+  }
+  
+  body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+      font-family: 'IRANSansXFaNum' !important;
+  }
+  
+  .container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+  }
+  
+  .app-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-top: 20px;
+  }
+  
+  .app-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 700;
+  }
+  
+  .app-header p {
+      color: var(--light-text);
+      font-size: 1.1rem;
+  }
+  
+  .app-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .qr-form {
+      background-color: var(--card-color);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      margin-bottom: 30px;
+  }
+  
+  .form-group {
+      position: relative;
+      margin-bottom: 30px;
+  }
+  
+  .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-color);
+  }
+  
+  .form-group input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #e9ecef;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      transition: var(--transition);
+      background-color: #f8f9fa;
+  }
+  
+  .form-group input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      background-color: white;
+  }
+  
+  .input-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: var(--transition);
+  }
+  
+  .form-group input:focus ~ .input-border {
+      width: 100%;
+  }
+  
+  .input-hint {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--light-text);
+      margin-top: 8px;
+  }
+  
+  .generate-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+  }
+  
+  .generate-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+  }
+  
+  .generate-btn:active {
+      transform: translateY(0);
+  }
+  
+  .qr-result {
+      background-color: var(--card-color);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .qr-result.hidden {
+      display: none;
+  }
+  
+  .qr-title {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+  }
+  
+  .qr-code {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .download-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 25px;
+      background-color: var(--success-color);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 20px;
+  }
+  
+  .download-btn:hover {
+      background-color: #28a99e;
+      transform: translateY(-2px);
+  }
+  
+  .app-footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--light-text);
+      font-size: 0.9rem;
+      margin-top: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .container {
+          padding: 10px;
+      }
+      
+      .app-header h1 {
+          font-size: 2rem;
+      }
+      
+      .qr-form, .qr-result {
+          padding: 20px;
+      }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .qr-result {
+      animation: fadeIn 0.5s ease-out;
+  }
