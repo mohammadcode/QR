@@ -203,8 +203,6 @@
       font-size: 0.9rem;
       margin-top: auto;
   }
-  
-  /* Responsive Design */
   @media (max-width: 768px) {
       .container {
           padding: 10px;
@@ -218,8 +216,6 @@
           padding: 20px;
       }
   }
-  
-  /* Animation */
   @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -228,3 +224,10 @@
   .qr-result {
       animation: fadeIn 0.5s ease-out;
   }
+
+/* این پروژه برای محمد مرادیان است ممنون میشم که اگر خواستید کپی برداری کنید از پروژه حتما به اون خبر بدید
+این پروژه درسته لاینسنس نداره ولی شما هم حق کپی کردن ندارید
+برای نمونه کار های بیشتر و ثبت پروژه به پیچ 
+@codeino_mohammad
+سبز بزنید و ممنون میشم به این پروژه ستاره بدید
+ */
